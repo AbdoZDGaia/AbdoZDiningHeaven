@@ -10,6 +10,9 @@ namespace AbdoZDiningHeaven.Data
     {
         IEnumerable<Restaurant> GetRestaurantsByName(string name);
         Restaurant GetById(int id);
+        Restaurant Update(Restaurant restaurant);
+        Restaurant Add(Restaurant restaurant);
+        int Commit();
     }
 
     public class InMemoryRestaurantData : IRestaurantData
@@ -36,6 +39,29 @@ namespace AbdoZDiningHeaven.Data
         {
             var result = RestaurantsList.SingleOrDefault(r => r.Id == id);
             return result;
+        }
+
+        public Restaurant Update(Restaurant restaurant)
+        {
+            var rest = RestaurantsList.SingleOrDefault(r => r.Id == restaurant.Id);
+            if (rest == null)
+                return new Restaurant();
+
+            RestaurantsList.Remove(rest);
+            RestaurantsList.Add(restaurant);
+            return restaurant;
+        }
+
+        public int Commit()
+        {
+            return 0;
+        }
+
+        public Restaurant Add(Restaurant restaurant)
+        {
+            restaurant.Id = RestaurantsList.Max(r => r.Id) + 1;
+            RestaurantsList.Add(restaurant);
+            return restaurant;
         }
     }
 }

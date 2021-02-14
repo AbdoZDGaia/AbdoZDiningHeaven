@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbdoZDiningHeaven.App", "AbdoZDiningHeaven.App\AbdoZDiningHeaven.App.csproj", "{DBD33191-E283-4177-8EE4-CC5537996E55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbdoZDiningHeaven.App", "AbdoZDiningHeaven.App\AbdoZDiningHeaven.App.csproj", "{DBD33191-E283-4177-8EE4-CC5537996E55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbdoZDiningHeaven.Core", "AbdoZDiningHeaven.Core\AbdoZDiningHeaven.Core.csproj", "{8E3845C4-1D92-4B0C-A40A-B6504B6B08AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbdoZDiningHeaven.Core", "AbdoZDiningHeaven.Core\AbdoZDiningHeaven.Core.csproj", "{8E3845C4-1D92-4B0C-A40A-B6504B6B08AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbdoZDiningHeaven.Data", "AbdoZDiningHeaven.Data\AbdoZDiningHeaven.Data.csproj", "{5397595C-51F9-4FCA-9224-0FC21C15F7FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbdoZDiningHeaven.Data", "AbdoZDiningHeaven.Data\AbdoZDiningHeaven.Data.csproj", "{5397595C-51F9-4FCA-9224-0FC21C15F7FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
