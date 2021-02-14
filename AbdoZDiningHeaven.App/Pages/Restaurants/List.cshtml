@@ -1,0 +1,47 @@
+﻿@page
+@model ListModel
+@{
+    ViewData["title"] = "Restaurants Menu";
+}
+
+<h1>Restaurants</h1>
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" asp-for="SearchTerm" />
+            <span class="input-group-btn">
+                <button class="btn btn-default">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Cuisine</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var rest in Model.RestaurantsList)
+        {
+            <tr>
+                <td>@rest.Id</td>
+                <td>@rest.Name</td>
+                <td>@rest.Location</td>
+                <td>@rest.Cuisine</td>
+                <td>
+                    <a class="btn btn-lg" asp-page="./Detail" asp-route-restId="@rest.Id">
+                        <i class="glyphicon glyphicon-zoom-in"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>@Model.Message</div>
