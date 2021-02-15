@@ -7,5 +7,6 @@ namespace AbdoZDiningHeaven.Data
     public interface IRestaurantData : IBaseData<Restaurant>
     {
         IEnumerable<Restaurant> GetRestaurantsByName(string name);
+        int GetRestaurantsCount();
     }
 }

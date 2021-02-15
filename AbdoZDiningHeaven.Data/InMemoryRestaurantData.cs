@@ -64,5 +64,10 @@ namespace AbdoZDiningHeaven.Data
 
             return rest;
         }
+
+        public int GetRestaurantsCount()
+        {
+            return RestaurantsList.Count;
+        }
     }
 }

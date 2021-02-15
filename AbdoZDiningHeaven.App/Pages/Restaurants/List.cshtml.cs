@@ -13,10 +13,11 @@ namespace AbdoZDiningHeaven.App.Pages.Restaurants
         private readonly IConfiguration _config;
         private readonly IRestaurantData _restaurantData;
 
-        public string Message { get; set; }
         public IEnumerable<Restaurant> RestaurantsList { get; set; }
-        [BindProperty(SupportsGet =true)]
+        [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
+        [TempData]
+        public string Message { get; set; }
 
         public ListModel(IConfiguration config, IRestaurantData restaurantData)
         {
@@ -26,7 +27,6 @@ namespace AbdoZDiningHeaven.App.Pages.Restaurants
 
         public void OnGet(string searchTerm)
         {
-            Message = _config["Message"];
             RestaurantsList = _restaurantData.GetRestaurantsByName(searchTerm);
         }
     }

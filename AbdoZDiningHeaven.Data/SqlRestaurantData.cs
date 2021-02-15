@@ -21,5 +21,11 @@ namespace AbdoZDiningHeaven.Data
                 .OrderBy(r => r.Name).ToList();
             return result;
         }
+
+        public int GetRestaurantsCount()
+        {
+            var result = _ctx.Restaurants.Count();
+            return result;
+        }
     }
 }

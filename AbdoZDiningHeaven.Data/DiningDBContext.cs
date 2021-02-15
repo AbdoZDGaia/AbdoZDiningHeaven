@@ -17,6 +17,7 @@ namespace AbdoZDiningHeaven.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Restaurant>().HasQueryFilter(r => !r.IsDeleted);
             base.OnModelCreating(modelBuilder);
         }
     }

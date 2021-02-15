@@ -17,41 +17,53 @@
         </div>
     </div>
 </form>
-<table class="table">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Location</th>
-            <th>Cuisine</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var rest in Model.RestaurantsList)
-        {
+
+@foreach (var rest in Model.RestaurantsList)
+{
+    <partial name="_Summary" model="rest" />
+}
+
+@*<table class="table">
+        <thead>
             <tr>
-                <td>@rest.Id</td>
-                <td>@rest.Name</td>
-                <td>@rest.Location</td>
-                <td>@rest.Cuisine</td>
-                <td>
-                    <a class="btn btn-lg" asp-page="./Detail" asp-route-restId="@rest.Id">
-                        <i class="glyphicon glyphicon-zoom-in"></i>
-                    </a>
-                    <a class="btn btn-lg" asp-page="./Edit" asp-route-restId="@rest.Id">
-                        <i class="glyphicon glyphicon-edit"></i>
-                    </a>
-                </td>
+                <th>#</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Cuisine</th>
+                <th>Actions</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var rest in Model.RestaurantsList)
+            {
+                <tr>
+                    <td>@rest.Id</td>
+                    <td>@rest.Name</td>
+                    <td>@rest.Location</td>
+                    <td>@rest.Cuisine</td>
+                    <td>
+                        <a class="btn btn-lg" asp-page="./Detail" asp-route-restId="@rest.Id">
+                            <i class="glyphicon glyphicon-zoom-in"></i>
+                        </a>
+                        <a class="btn btn-lg" asp-page="./Edit" asp-route-restId="@rest.Id">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </a>
+                        <a class="btn btn-lg" asp-page="./Delete" asp-route-restId="@rest.Id">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
 <a class="btn btn-primary" asp-page="./Edit">
     <i class="glyphicon glyphicon-new-window"></i>
     Add New Restaurant
 </a>
 
 @section footer {
-    <div>@Model.Message</div>
+    @if (Model.Message != null)
+    {
+        <div class="alert alert-info">@Model.Message</div>
+    }
 }
