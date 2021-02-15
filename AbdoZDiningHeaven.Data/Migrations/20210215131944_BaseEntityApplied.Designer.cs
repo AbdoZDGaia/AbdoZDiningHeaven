@@ -4,14 +4,16 @@ using AbdoZDiningHeaven.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AbdoZDiningHeaven.Data.Migrations
 {
     [DbContext(typeof(DiningDBContext))]
-    partial class DiningDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210215131944_BaseEntityApplied")]
+    partial class BaseEntityApplied
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

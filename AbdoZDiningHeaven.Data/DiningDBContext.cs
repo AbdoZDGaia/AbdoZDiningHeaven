@@ -14,5 +14,10 @@ namespace AbdoZDiningHeaven.Data
         }
 
         public DbSet<Restaurant> Restaurants { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

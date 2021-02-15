@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace AbdoZDiningHeaven.Core
 {
-    public class Restaurant
+    public class Restaurant : BaseEntity
     {
-        public int Id { get; set; }
         [Required, StringLength(80, ErrorMessage = "Name is too long.")]
         public string Name { get; set; }
         [Required, StringLength(255, ErrorMessage = "Location is too long.")]
